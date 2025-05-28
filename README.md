@@ -33,18 +33,6 @@ This project classifies COVID-19 research papers into five predefined topics (A�
 
 A total of **14 experiments** (7 model variants × 2 input types) were conducted.
 
-当然，这里是你所需的完整版本的 `## 📊 Results Summary`，基于你 notebook 中训练的 **14 个模型组合（7 模型 × 2 输入类型）**，按照 README 语法规范完整展开：
-
----
-
-## 📊 Results Summary
-
-A total of **14 experiments** (7 model variants × 2 input types) were conducted.
-
-## 📊 Results Summary
-
-A total of **14 experiments** (7 model variants × 2 input types) were conducted.
-
 | Input Type | Model                               | Accuracy | Macro F1 | CV F1 Mean | CV F1 Std |
 | ---------- | ----------------------------------- | -------- | -------- | ---------- | --------- |
 | Abstract   | TF-IDF + Logistic Regression        | 0.830    | 0.829    | 0.8049     | 0.0346    |
