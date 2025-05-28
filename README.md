@@ -10,7 +10,7 @@ This project classifies COVID-19 research papers into five predefined topics (Aâ
 
 * **Text preprocessing and vectorization:**
   * TF-IDF (unigram and bigram)
-  * CountVectorizer (BoW - removed in final version)
+  * CountVectorizer (BoW)
 
 * **Models trained and compared:**
   * Logistic Regression
