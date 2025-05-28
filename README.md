@@ -1,4 +1,4 @@
-# COVID-19 Text Classification Project
+# Group Assignment 1 - Classification: COVID-19 Text Classification Project
 
 This project classifies COVID-19 research papers into five predefined topics (A–E) using classical machine learning models and different text representations.
 
