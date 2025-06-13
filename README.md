@@ -74,3 +74,65 @@ A total of **14 experiments** (7 model variants × 2 input types) were conducted
 3. Run all cells.
 
 All results, metrics, confusion matrices, and comparison plots will be generated at the end.
+
+
+
+# Group Assignment 2 - Clustering: COVID-19 Topic Discovery Project
+
+This project explores unsupervised topic discovery for COVID-19 research abstracts using multiple embedding methods and clustering algorithms.
+
+## ✅ What’s Done
+
+- **Text embedding methods:**
+  - TF-IDF
+  - Doc2Vec
+  - sBERT
+
+- **Clustering algorithms applied:**
+  - KMeans
+  - Hierarchical Clustering
+
+- **Evaluation metrics:**
+  - Silhouette Score
+  - Cohen's Kappa (vs. true labels)
+
+- **Cluster interpretation techniques:**
+  - Keyword frequency & bar charts
+  - WordCloud visualization
+  - Named Entity Recognition (NER)
+  - TF-IDF heatmaps (Correct vs Misclassified samples)
+
+## 📊 Results Summary
+
+A selection of clustering combinations were tested.
+
+| Model                | Kappa   | Silhouette |
+|---------------------|---------|------------|
+| sBERT + Spectral     | 0.1325  | 0.0817     |
+| sBERT + KMeans       | 0.0375  | 0.0876     |
+| Doc2Vec + KMeans     | -0.0638 | 0.0495     |
+| Doc2Vec + Spectral   | 0.0125  | 0.0331     |
+| w2v + EM             | -0.1463 | 0.1019     |
+| BoW + EM             | 0.2900  | N/A        |
+
+**Best performing (alignment to labels):**  
+**sBERT + Spectral**, with Kappa = 0.1325  
+(though all models show weak alignment, as expected in unsupervised clustering)
+
+
+## 📁 Output
+
+- Cluster distribution plots
+- Top keywords and WordCloud for each cluster
+- Named Entity analysis per cluster
+- TF-IDF heatmaps: misclassified vs correct clusters
+
+## ▶️ How to Run
+
+1. Make sure the following CSV is in the root directory:
+   - `covid19_preprocessed_dataset.csv`
+
+2. Open `NLP_COVID19_dual_input_comparison.ipynb`
+
+3. Run all cells. All metrics, cluster interpretations, and plots will be generated.
+
