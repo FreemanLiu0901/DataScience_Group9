@@ -9,18 +9,18 @@
 ![Correct](cluster_keyword_heatmaps/TFIDF_correct_keywords.png)
 
 **Top Misclassified Words:**
-- covid19
-- sarscov2
-- patients
-- vaccine
-- health
+- signal
+- onset
+- far
+- prove
+- hours
 
 **Top Correctly Classified Words:**
-- 0001
-- 001
-- 005
-- 10
-- 100
+- aa
+- ability
+- able
+- abnormal
+- abnormalities
 
 ---
 
