@@ -1,0 +1,7 @@
+intent,total_samples,errors,error_rate,accuracy
+DiseaseToSymptom,89,89,100.0,0.0
+SymptomToDisease,100,100,100.0,0.0
+TreatmentRecommendation,97,0,0.0,100.0
+RiskAssessment,94,94,100.0,0.0
+FoodAdvice,84,84,100.0,0.0
+PreventionAdvice,90,90,100.0,0.0
