@@ -1,9 +1,9 @@
 # Healthcare Assistant Chatbot - Final Project Report
 ## Person 1 Implementation Summary
 
-**Project:** PETROSDTI 5125: DATA SCIENCE APPLICATIONS | SPRING/SUMMER 2025  
-**Completed:** 2025-07-19T20:35:02.516982  
-**Team Member:** Person 1  
+**Project:** PETROSDTI 5125: DATA SCIENCE APPLICATIONS | SPRING/SUMMER 2025
+**Completed:** 2025-07-23T20:55:50.325725
+**Team Member:** Person 1
 
 ---
 
@@ -15,15 +15,15 @@
   - CDC/WHO websites (FAQs section)
   - Medical forums approach
   - Synthetic data generation based on competency questions
-- **Samples Processed:** 554
+- **Samples Processed:** 570
 - **Quality Metrics:**
-  - Average text length: 158.9 characters
-  - Average word count: 18.9 words
+  - Average text length: 161.5 characters
+  - Average word count: 19.6 words
   - Average entity count: 2.1 entities
 
 ### ✅ Text Feature Engineering (3%)
 - **Goal:** Turn cleaned text into numbers so the model can understand it
-- **Methods Implemented:** 9
+- **Methods Implemented:** 7
   - **TF-IDF:** Optimized with max_features=3000, ngram_range=(1,2)
   - **Bag of Words (BoW):** Balanced approach with max_features=1000
   - **Sentence-BERT (sBERT):** State-of-the-art semantic embeddings
@@ -53,36 +53,36 @@
 ## 📊 Results Summary
 
 ### 🏆 Best Performing Combination
-- **Feature Method:** SBERT
+- **Feature Method:** ENTITY_FEATURES
 - **Clustering Algorithm:** KMEANS
-- **Adjusted Rand Index:** 0.767
-- **Silhouette Score:** 0.125
-- **Purity:** 0.839
+- **Adjusted Rand Index:** 0.493
+- **Silhouette Score:** 0.397
+- **Purity:** 0.719
 - **Clusters Found:** 6
 
 ### 📈 Top 5 Performing Combinations
 | Rank | Feature Method | Algorithm | ARI | Silhouette |
 |------|----------------|-----------|-----|------------|
-| 1 | sbert | kmeans | 0.767 | 0.125 |
-| 2 | word2vec | agglomerative | 0.678 | 0.231 |
-| 3 | word2vec | kmeans | 0.659 | 0.226 |
-| 4 | sbert | spectral | 0.579 | 0.102 |
-| 5 | sbert | agglomerative | 0.516 | 0.090 |
+| 1 | entity_features | kmeans | 0.493 | 0.397 |
+| 2 | tfidf_entities | agglomerative | 0.472 | 0.014 |
+| 3 | entity_features | agglomerative | 0.461 | 0.362 |
+| 4 | tfidf_entities | hdbscan | 0.396 | 0.205 |
+| 5 | tfidf | hdbscan | 0.396 | 0.201 |
 
 ---
 
 ## 📈 Dataset Analysis
 
 ### Intent Distribution
-- **SymptomToDisease:** 100 samples (18.1%)
-- **TreatmentRecommendation:** 97 samples (17.5%)
-- **RiskAssessment:** 94 samples (17.0%)
-- **PreventionAdvice:** 90 samples (16.2%)
-- **DiseaseToSymptom:** 89 samples (16.1%)
-- **FoodAdvice:** 84 samples (15.2%)
+- **SymptomToDisease:** 100 samples (17.5%)
+- **RiskAssessment:** 98 samples (17.2%)
+- **DiseaseToSymptom:** 95 samples (16.7%)
+- **TreatmentRecommendation:** 95 samples (16.7%)
+- **FoodAdvice:** 92 samples (16.1%)
+- **PreventionAdvice:** 90 samples (15.8%)
 
 ### Data Sources
-- **Synthetic:** 554 samples (100.0%)
+- **Synthetic:** 570 samples (100.0%)
 
 ---
 
@@ -148,7 +148,7 @@ Based on DialogFlow project, implemented 6 atomistic competency questions:
 ### For Person 2 (Recommender System):
 1. Use the processed dataset: `healthcare_qa_processed.csv`
 2. Feature vectors are available in `vectors_*.pkl` files
-3. Best performing features: sbert
+3. Best performing features: entity_features
 4. Intent labels can be used for recommendation categories
 
 ### For Person 3 (Problem Formulation & Presentation):
@@ -168,13 +168,39 @@ Based on DialogFlow project, implemented 6 atomistic competency questions:
 
 ## 🎉 Project Completion Status
 
-✅ **Data Preparation (2.5%)** - COMPLETED  
-✅ **Text Feature Engineering (3%)** - COMPLETED  
-✅ **Clustering (3%)** - COMPLETED  
-✅ **Visualization & Demonstration** - COMPLETED  
+✅ **Data Preparation (2.5%)** - COMPLETED
+✅ **Text Feature Engineering (3%)** - COMPLETED
+✅ **Clustering (3%)** - COMPLETED
+✅ **Visualization & Demonstration** - COMPLETED
 
 **Total Person 1 Contribution:** 8.5% + Visualization support
 
 ---
 
-*Report generated automatically on 2025-07-19 20:35:02*
+*Report generated automatically on 2025-07-23 20:55:50*
+
+
+## 📊 Recommender System Evaluation Summary (Person 2)
+
+This section summarizes the evaluation of collaborative filtering algorithms used to recommend relevant Q&A pairs based on detected intent.
+
+### Aggregate Performance Metrics
+
+| Algorithm    |   RMSE |   MAE |   Precision@10 |   Recall@10 |   Prediction Accuracy |   NDCG@10 |   MAP@10 |   MRR@10 |   Combined_Score |
+|:-------------|-------:|------:|---------------:|------------:|----------------------:|----------:|---------:|---------:|-----------------:|
+| KNNBasic     |      0 |     0 |              1 |    0.429187 |                     1 |         1 |  3.33333 |        1 |          7.76252 |
+| SVD          |      0 |     0 |              1 |    0.429187 |                     1 |         1 |  3.33333 |        1 |          7.76252 |
+| NMF          |      0 |     0 |              1 |    0.429187 |                     1 |         1 |  3.33333 |        1 |          7.76252 |
+| CoClustering |      0 |     0 |              1 |    0.429187 |                     1 |         1 |  3.33333 |        1 |          7.76252 |
+
+### Analysis Notes
+
+- **RMSE and MAE:** These metrics are less informative for this implicit dataset with constant ratings.
+- **Precision@10, Recall@10, NDCG@10, MAP@10, and MRR@10:** These ranking-aware metrics are more relevant for evaluating how well models prioritize relevant items. Higher values are generally better.
+- Refer to the generated visualization files (`recommender_evaluation_extended.png` and `recommender_per_intent_evaluation.png`) for detailed comparisons across algorithms and per-intent performance.
+- Sample 'failure' cases (relevant items with low predicted scores) for each recommender model are printed in the output of the Recommender Engine cell (kr-ZFU7B9rJg).
+
+### Overall Best Algorithm
+
+Based on the Combined Score (Prediction Accuracy + Precision@10 + Recall@10 + NDCG@10 + MAP@10 + MRR@10), the **KNNBasic** algorithm achieved the highest score (7.7625).
+

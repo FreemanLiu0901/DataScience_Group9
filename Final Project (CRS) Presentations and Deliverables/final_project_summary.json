@@ -7,35 +7,33 @@
       "Clustering Analysis (3%)",
       "Visualization & Demonstration"
     ],
-    "completion_date": "2025-07-19T20:35:02.516982",
-    "total_samples_processed": 554,
-    "feature_methods_implemented": 9,
-    "clustering_combinations_tested": 36
+    "completion_date": "2025-07-23T20:55:50.325725",
+    "total_samples_processed": 570,
+    "feature_methods_implemented": 7,
+    "clustering_combinations_tested": 28
   },
   "data_summary": {
-    "total_samples": 554,
+    "total_samples": 570,
     "intent_distribution": {
       "SymptomToDisease": 100,
-      "TreatmentRecommendation": 97,
-      "RiskAssessment": 94,
-      "PreventionAdvice": 90,
-      "DiseaseToSymptom": 89,
-      "FoodAdvice": 84
+      "RiskAssessment": 98,
+      "DiseaseToSymptom": 95,
+      "TreatmentRecommendation": 95,
+      "FoodAdvice": 92,
+      "PreventionAdvice": 90
     },
     "source_distribution": {
-      "Synthetic": 554
+      "Synthetic": 570
     },
-    "avg_text_length": 158.92238267148014,
-    "avg_word_count": 18.8971119133574,
-    "avg_entity_count": 2.0938628158844765
+    "avg_text_length": 161.4561403508772,
+    "avg_word_count": 19.62456140350877,
+    "avg_entity_count": 2.0649122807017544
   },
   "feature_engineering_summary": {
     "methods_implemented": [
       "tfidf",
       "bow",
       "lda",
-      "sbert",
-      "word2vec",
       "doc2vec",
       "entity_features",
       "tfidf_entities",
@@ -43,105 +41,95 @@
     ],
     "feature_dimensions": {
       "tfidf": [
-        554,
-        1305
+        570,
+        1363
       ],
       "bow": [
-        554,
+        570,
         1000
       ],
       "lda": [
-        554,
+        570,
         10
       ],
-      "sbert": [
-        554,
-        384
-      ],
-      "word2vec": [
-        554,
-        300
-      ],
       "doc2vec": [
-        554,
+        570,
         100
       ],
       "entity_features": [
-        554,
+        570,
         10
       ],
       "tfidf_entities": [
-        554,
-        1315
+        570,
+        1373
       ],
       "tfidf_pca": [
-        554,
+        570,
         100
       ]
     }
   },
   "clustering_summary": {
     "algorithms_tested": [
+      "agglomerative",
       "spectral",
       "hdbscan",
-      "agglomerative",
       "kmeans"
     ],
     "feature_methods_tested": [
-      "bow",
+      "tfidf_pca",
+      "lda",
       "tfidf_entities",
       "tfidf",
-      "word2vec",
-      "tfidf_pca",
-      "entity_features",
-      "sbert",
-      "lda",
-      "doc2vec"
+      "doc2vec",
+      "bow",
+      "entity_features"
     ],
     "best_combination": {
-      "feature_method": "sbert",
+      "feature_method": "entity_features",
       "clustering_algorithm": "kmeans",
-      "adjusted_rand_index": 0.7674118359185057,
-      "silhouette_score": 0.12468264997005463,
-      "purity": 0.8393501805054152,
+      "adjusted_rand_index": 0.4929237497389959,
+      "silhouette_score": 0.3973109510138573,
+      "purity": 0.7192982456140351,
       "n_clusters_found": "6"
     },
     "performance_metrics": null,
     "top_5_combinations": [
       {
         "rank": 1,
-        "feature_method": "sbert",
+        "feature_method": "entity_features",
         "clustering_algorithm": "kmeans",
-        "adjusted_rand_index": 0.7674118359185057,
-        "silhouette_score": 0.12468264997005463
+        "adjusted_rand_index": 0.4929237497389959,
+        "silhouette_score": 0.3973109510138573
       },
       {
         "rank": 2,
-        "feature_method": "word2vec",
+        "feature_method": "tfidf_entities",
         "clustering_algorithm": "agglomerative",
-        "adjusted_rand_index": 0.6776907725176583,
-        "silhouette_score": 0.23116640746593475
+        "adjusted_rand_index": 0.47206811286662725,
+        "silhouette_score": 0.01395200287248202
       },
       {
         "rank": 3,
-        "feature_method": "word2vec",
-        "clustering_algorithm": "kmeans",
-        "adjusted_rand_index": 0.6586527750541231,
-        "silhouette_score": 0.22613279521465302
+        "feature_method": "entity_features",
+        "clustering_algorithm": "agglomerative",
+        "adjusted_rand_index": 0.46117247507825193,
+        "silhouette_score": 0.36211022535390824
       },
       {
         "rank": 4,
-        "feature_method": "sbert",
-        "clustering_algorithm": "spectral",
-        "adjusted_rand_index": 0.5786584597847957,
-        "silhouette_score": 0.10225880891084671
+        "feature_method": "tfidf_entities",
+        "clustering_algorithm": "hdbscan",
+        "adjusted_rand_index": 0.39601821895986655,
+        "silhouette_score": 0.20525608234840587
       },
       {
         "rank": 5,
-        "feature_method": "sbert",
-        "clustering_algorithm": "agglomerative",
-        "adjusted_rand_index": 0.5159174168563334,
-        "silhouette_score": 0.08956733345985413
+        "feature_method": "tfidf",
+        "clustering_algorithm": "hdbscan",
+        "adjusted_rand_index": 0.3959314299594699,
+        "silhouette_score": 0.20066446809881552
       }
     ]
   }
